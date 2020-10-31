@@ -71,5 +71,6 @@
   "item.minecraft.splash_potion.effect.charred_strike": "Splash Charred Strike",
   "advancements.your_soul_is_mine.title": "Your Soul Is Mine!",
   "tooltip.arcanecraft3.no_spell": "[No Spell]",
-  "tooltip.arcanecraft3.ice_wand": "[Snowstorm]"
+  "tooltip.arcanecraft3.ice_wand": "[Snowstorm]",
+  "itemGroup.arcancraft3.item_group": "ArcaneCraft 3"
 }
