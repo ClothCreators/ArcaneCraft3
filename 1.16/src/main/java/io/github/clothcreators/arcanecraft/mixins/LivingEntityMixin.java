@@ -27,7 +27,7 @@ public abstract class LivingEntityMixin extends Entity {
 	public void interceptDamage(DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
 		Entity attacker = source.getAttacker();
 		if (attacker instanceof LivingEntity && ((LivingEntity) attacker).hasStatusEffect(ModStatusEffects.CHARRED_STRIKE)) {
-			this.setOnFireFor(15);
+			this.setOnFireFor(3);
 		}
 	}
 
