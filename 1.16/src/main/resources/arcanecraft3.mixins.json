@@ -1,3 +1,6 @@
 {
-  "package": "io.github.clothcreators.arcanecraft.mixins"
+  "package": "io.github.clothcreators.arcanecraft.mixins",
+  "mixins": [
+    "LivingEntityMixin"
+  ]
 }
