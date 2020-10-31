@@ -8,6 +8,7 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
+import net.minecraft.world.WorldView;
 
 public class CrystalsBlock extends Block {
 	public CrystalsBlock(Settings settings) {
@@ -28,4 +29,10 @@ public class CrystalsBlock extends Block {
 	public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
 		return VoxelShapes.cuboid(0.1D, 0D, -0.1D, 0.9D, 0.4D, 0.9D);
 	}
+
+	@Override
+	public boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
+		return world.getBlockState(pos.down()).isFullCube(world, pos);
+	}
 }
+
