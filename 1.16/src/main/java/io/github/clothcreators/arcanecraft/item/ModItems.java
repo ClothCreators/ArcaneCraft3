@@ -14,6 +14,7 @@ import net.minecraft.util.registry.Registry;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 
+@SuppressWarnings("unused")
 public class ModItems {
 	private ModItems() {
 	}
@@ -28,6 +29,7 @@ public class ModItems {
 	public static final Item RUNIC_STONE_SLAB = register("runic_stone_slab", ModBlocks.RUNIC_STONE_SLAB, new FabricItemSettings().group(ITEM_GROUP));
 	public static final Item RUNIC_STONE_STAIRS = register("runic_stone_stairs", ModBlocks.RUNIC_STONE_STAIRS, new FabricItemSettings().group(ITEM_GROUP));
 	public static final Item RUNIC_STONE_WALL = register("runic_stone_wall", ModBlocks.RUNIC_STONE_WALL, new FabricItemSettings().group(ITEM_GROUP));
+	public static final Item SOUL_ITEM = register("soul", new SoulItem(new FabricItemSettings().group(ITEM_GROUP)));
 
 	private static Item register(String name, Block block, Item.Settings settings) {
 		return Registry.register(Registry.ITEM, id(name), new BlockItem(block, settings));
