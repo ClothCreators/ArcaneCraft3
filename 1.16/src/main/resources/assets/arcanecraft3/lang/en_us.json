@@ -25,7 +25,6 @@
   "item.minecraft.lingering_potion.effect.druid_blessing": "Lingering Druid Blessing",
   "item.arcanecraft3.sacrificial_dagger": "Sacrificial Dagger",
   "block.arcanecraft3.crystal_ore": "Crystal Ore",
-  "itemGroup.tabarcane_craft": "ArcaneCraft III ",
   "item.arcanecraft3.crystal_pickaxe": "Crystal Pickaxe",
   "block.arcanecraft3.wand_workbench": "Wand Workbench",
   "item.arcanecraft3.wand_evoker": "Wand",
@@ -72,5 +71,6 @@
   "advancements.your_soul_is_mine.title": "Your Soul Is Mine!",
   "tooltip.arcanecraft3.no_spell": "[No Spell]",
   "tooltip.arcanecraft3.ice_wand": "[Snowstorm]",
-  "tooltip.arcanecraft3.fire_wand": "[Fire Bolt]"
+  "tooltip.arcanecraft3.fire_wand": "[Fire Bolt]",
+  "itemGroup.arcanecraft3.item_group": "ArcaneCraft 3"
 }
