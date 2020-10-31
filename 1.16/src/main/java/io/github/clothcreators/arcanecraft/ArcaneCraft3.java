@@ -1,5 +1,8 @@
 package io.github.clothcreators.arcanecraft;
 
+import io.github.clothcreators.arcanecraft.block.ModBlocks;
+import io.github.clothcreators.arcanecraft.item.ModItems;
+
 import net.minecraft.util.Identifier;
 
 import net.fabricmc.api.ModInitializer;
@@ -9,7 +12,8 @@ public class ArcaneCraft3 implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-
+		ModBlocks.init();
+		ModItems.init();
 	}
 
 	public static Identifier id(String name) {

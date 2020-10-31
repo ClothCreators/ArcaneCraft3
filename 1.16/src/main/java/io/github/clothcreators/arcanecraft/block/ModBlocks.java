@@ -16,8 +16,13 @@ public class ModBlocks {
 	}
 
 	public static final Block RUNIC_STONE = register("runic_stone", new Block(FabricBlockSettings.of(Material.STONE).sounds(BlockSoundGroup.STONE).strength(1.1F, 17.5F).breakByHand(false).breakByTool(FabricToolTags.PICKAXES, 0)));
+	public static final Block CRYSTALS = register("crystals", new CrystalsBlock(FabricBlockSettings.of(Material.STONE).strength(0.15F, 10F).nonOpaque()));
 
 	private static Block register(String name, Block block) {
 		return Registry.register(Registry.BLOCK, id(name), block);
+	}
+
+	public static void init() {
+		// just loads the class
 	}
 }
