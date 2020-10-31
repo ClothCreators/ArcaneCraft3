@@ -20,6 +20,7 @@ public class ModBlocks {
 	}
 
 	public static final Block RUNIC_STONE = register("runic_stone", new Block(FabricBlockSettings.of(Material.STONE).sounds(BlockSoundGroup.STONE).strength(1.1F, 17.5F).breakByHand(false).breakByTool(FabricToolTags.PICKAXES, 0)));
+	public static final Block CRYSTAL_ORE = register("crystal_ore", new Block(FabricBlockSettings.of(Material.STONE).sounds(BlockSoundGroup.METAL).strength(2.0F, 17.5F).breakByHand(false).breakByTool(FabricToolTags.PICKAXES, 2)));
 	public static final Block RUNIC_STONE_STAIRS = register("runic_stone_stairs", new StairsBlock(RUNIC_STONE.getDefaultState(), FabricBlockSettings.copyOf(RUNIC_STONE)));
 	public static final Block RUNIC_STONE_SLAB = register("runic_stone_slab", new SlabBlock(FabricBlockSettings.copyOf(RUNIC_STONE)));
 	public static final Block RUNIC_STONE_WALL = register("runic_stone_wall", new WallBlock(FabricBlockSettings.copyOf(RUNIC_STONE)));
