@@ -26,7 +26,7 @@
       "io.github.clothcreators.arcanecraft.ArcaneCraft3"
     ],
     "client": [
-      "io.github.clothcreators.arcanecraft.client.ArcaneCraftClient"
+      "io.github.clothcreators.arcanecraft.client.ArcaneCraft3Client"
     ]
   },
   "mixins": [
