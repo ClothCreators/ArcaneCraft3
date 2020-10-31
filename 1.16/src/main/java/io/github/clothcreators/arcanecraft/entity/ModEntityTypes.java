@@ -15,7 +15,8 @@ public class ModEntityTypes {
 	private ModEntityTypes() {
 	}
 
-	public static final EntityType<FireSplashEntity> FIRE_SPLASH = register("fire_splash", FabricEntityTypeBuilder.<FireSplashEntity>createLiving().trackRangeBlocks(64).trackedUpdateRate(3).fireImmune().dimensions(EntityDimensions.fixed(0, 0)).forceTrackedVelocityUpdates(true).build());
+	public static final EntityType<FireSplashEntity> FIRE_SPLASH = register("fire_splash", FabricEntityTypeBuilder.<FireSplashEntity>createLiving().entityFactory(FireSplashEntity::new).trackRangeBlocks(64).trackedUpdateRate(3).fireImmune().dimensions(EntityDimensions.fixed(0, 0)).forceTrackedVelocityUpdates(true).build());
+	public static final EntityType<ItemProjectileEntity> ITEM_PROJECTILE = register("item_projectile", FabricEntityTypeBuilder.<ItemProjectileEntity>create().entityFactory(ItemProjectileEntity::new).trackedUpdateRate(1).trackRangeBlocks(64).dimensions(EntityDimensions.fixed(0.5F, 0.5F)).forceTrackedVelocityUpdates(true).build());
 
 	private static <T extends Entity> EntityType<T> register(String name, EntityType<T> entityType) {
 		return Registry.register(Registry.ENTITY_TYPE, id(name), entityType);
