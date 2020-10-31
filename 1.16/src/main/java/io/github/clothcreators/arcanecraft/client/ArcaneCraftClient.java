@@ -17,6 +17,8 @@ public class ArcaneCraftClient implements ClientModInitializer {
 		BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.CRYSTALS, RenderLayer.getTranslucent());
 		BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.RUNIC_PILLAR, RenderLayer.getCutout());
 		ClientSpriteRegistryCallback.event(new Identifier("textures/atlas/mob_effects.png")).register((spriteAtlasTexture, registry) -> {
+			registry.register(id("textures/mob_effect/druid_blessing.png"));
+			registry.register(id("textures/mob_effect/charred_strike.png"));
 			registry.register(id("textures/mob_effect/soul_trapper.png"));
 		});
 	}
