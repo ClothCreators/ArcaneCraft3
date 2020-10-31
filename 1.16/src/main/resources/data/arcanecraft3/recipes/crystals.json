@@ -1,0 +1,18 @@
+{
+  "group": "arcanecraft3",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XXX",
+    "XXX",
+    "XXX"
+  ],
+  "key": {
+    "X": {
+      "item": "arcanecraft3:crystal"
+    }
+  },
+  "result": {
+    "item": "arcanecraft3:crystals",
+    "count": 1
+  }
+}
