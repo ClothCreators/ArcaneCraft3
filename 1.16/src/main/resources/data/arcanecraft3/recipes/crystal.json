@@ -1,0 +1,13 @@
+{
+  "group": "arcanecraft3",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "arcanecraft:crystals"
+    }
+  ],
+  "result": {
+    "item": "arcanecraft:crystal",
+    "count": 9
+  }
+}
