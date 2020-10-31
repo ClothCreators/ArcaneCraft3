@@ -27,7 +27,9 @@ public class ProjectileUtilities {
 		arrow.setDamage(damage);
 		arrow.setPunch(knockback);
 		world.spawnEntity(arrow);
-		world.playSound(null, entity.getX(), entity.getY(), entity.getZ(), sound, SoundCategory.PLAYERS, 1, 1f / (random.nextFloat() * 0.5f + 1) + (power / 2));
+		if (sound != null) {
+			world.playSound(null, entity.getX(), entity.getY(), entity.getZ(), sound, SoundCategory.PLAYERS, 1, 1f / (random.nextFloat() * 0.5f + 1) + (power / 2));
+		}
 		return arrow;
 	}
 
@@ -42,7 +44,9 @@ public class ProjectileUtilities {
 		arrow.setSilent(true);
 		arrow.setCritical(false);
 		entity.world.spawnEntity(arrow);
-		entity.world.playSound(null, entity.getX(), entity.getY(), entity.getZ(), sound, SoundCategory.PLAYERS, 1, 1f / (new Random().nextFloat() * 0.5f + 1));
+		if (sound != null) {
+			entity.world.playSound(null, entity.getX(), entity.getY(), entity.getZ(), sound, SoundCategory.PLAYERS, 1, 1f / (new Random().nextFloat() * 0.5f + 1));
+		}
 		return arrow;
 	}
 }
