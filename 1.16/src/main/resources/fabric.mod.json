@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "arcanecraft3",
+  "version": "${version}",
+
+  "name": "ArcaneCraft 3",
+  "description": "This is an example description! Tell everyone what your mod is about!",
+  "authors": [
+    "CrispyChips",
+    "BoogieMonster1O1"
+  ],
+  "contributors": [
+    "Fredzik"
+  ],
+  "contact": {
+    "homepage": "https://fabricmc.net/",
+    "sources": "https://github.com/FabricMC/fabric-example-mod"
+  },
+
+  "license": "CC0-1.0",
+  "icon": "assets/arcanecraft3/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "io.github.clothcreators.ArcaneCraft3"
+    ]
+  },
+  "mixins": [
+    "arcanecraft3.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.7.4",
+    "fabric": "*",
+    "minecraft": "1.16.x"
+  }
+}
