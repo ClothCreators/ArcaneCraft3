@@ -1,13 +1,13 @@
 {
   "display": {
     "icon": {
-      "item": "arcanecraft3:wand_ice"
+      "item": "arcanecraft3:soul"
     },
     "title": {
-      "translate": "advancements.arcanecraft3.woo_magic.title"
+      "translate": "advancements.arcanecraft3.magic_summoning.title"
     },
     "description": {
-      "translate": "advancements.arcanecraft3.woo_magic.descr"
+      "translate": "advancements.arcanecraft3.magic_summoning.descr"
     },
     "frame": "task",
     "show_toast": true,
@@ -15,12 +15,12 @@
     "hidden": false
   },
   "criteria": {
-    "woo_magic": {
+    "magic_summoning": {
       "trigger": "minecraft:impossible"
     }
   },
   "rewards": {
-    "experience": 1
+    "experience": 4
   },
-  "parent": "arcanecraft3:magical_stick"
+  "parent": "arcanecraft3:arcane_craft_advancement"
 }
