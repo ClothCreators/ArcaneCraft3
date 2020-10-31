@@ -23,6 +23,10 @@ public class ModItems {
 	public static final Item CRYSTAL_DUST = register("crystal_dust", new Item(new FabricItemSettings().group(ITEM_GROUP)));
 	public static final Item CRYSTALS = register("crystals", ModBlocks.CRYSTALS, new FabricItemSettings().group(ITEM_GROUP));
 	public static final Item CRYSTAL = register("crystal", new CrystalItem(new FabricItemSettings().group(ITEM_GROUP)));
+	public static final Item RUNIC_PILLAR = register("runic_pillar", ModBlocks.RUNIC_PILLAR, new FabricItemSettings().group(ITEM_GROUP));
+	public static final Item RUNIC_STONE_SLAB = register("runic_stone_slab", ModBlocks.RUNIC_STONE_SLAB, new FabricItemSettings().group(ITEM_GROUP));
+	public static final Item RUNIC_STONE_STAIRS = register("runic_stone_stairs", ModBlocks.RUNIC_STONE_STAIRS, new FabricItemSettings().group(ITEM_GROUP));
+	public static final Item RUNIC_STONE_WALL = register("runic_stone_wall", ModBlocks.RUNIC_STONE_WALL, new FabricItemSettings().group(ITEM_GROUP));
 
 	private static Item register(String name, Block block, Item.Settings settings) {
 		return Registry.register(Registry.ITEM, id(name), new BlockItem(block, settings));

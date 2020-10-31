@@ -1,0 +1,9 @@
+{
+  "group": "arcanecraft3",
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "arcanecraft3:runic_stone"
+  },
+  "result": "arcanecraft3:runic_stone_wall"
+}

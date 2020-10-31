@@ -1,0 +1,36 @@
+{
+  "group": "arcanecraft3",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    " 4 ",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "arcanecraft3:runic_stone"
+    },
+    "1": {
+      "item": "arcanecraft3:crystal"
+    },
+    "2": {
+      "item": "arcanecraft3:runic_stone"
+    },
+    "4": {
+      "item": "arcanecraft3:runic_stone"
+    },
+    "6": {
+      "item": "arcanecraft3:runic_stone"
+    },
+    "7": {
+      "item": "arcanecraft3:runic_stone"
+    },
+    "8": {
+      "item": "arcanecraft3:runic_stone"
+    }
+  },
+  "result": {
+    "item": "arcanecraft3:runic_pillar",
+    "count": 1
+  }
+}

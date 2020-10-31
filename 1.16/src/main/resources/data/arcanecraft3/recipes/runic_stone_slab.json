@@ -1,0 +1,22 @@
+{
+  "group": "arcanecraft3",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012"
+  ],
+  "key": {
+    "0": {
+      "item": "arcanecraft3:runic_stone"
+    },
+    "1": {
+      "item": "arcanecraft3:runic_stone"
+    },
+    "2": {
+      "item": "arcanecraft3:runic_stone"
+    }
+  },
+  "result": {
+    "item": "arcanecraft3:runic_stone_slab",
+    "count": 6
+  }
+}
