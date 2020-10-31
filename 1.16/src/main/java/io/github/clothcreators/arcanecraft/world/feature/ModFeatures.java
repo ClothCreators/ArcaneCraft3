@@ -2,7 +2,6 @@ package io.github.clothcreators.arcanecraft.world.feature;
 
 import static io.github.clothcreators.arcanecraft.ArcaneCraft3.id;
 
-import com.mojang.serialization.Lifecycle;
 import io.github.clothcreators.arcanecraft.block.ModBlocks;
 
 import net.minecraft.util.registry.BuiltinRegistries;
