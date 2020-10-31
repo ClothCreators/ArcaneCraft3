@@ -20,7 +20,7 @@ import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 
 @SuppressWarnings("deprecation")
 public class ModFeatures {
-	public static final ConfiguredFeature<?, ?> CRYSTAL_ORE = register("crystal_ore", Feature.ORE.configure(new OreFeatureConfig(OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, ModBlocks.CRYSTAL_ORE.getDefaultState(), 8)).decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(0, 0, 64)))).spreadHorizontally().repeat(6);
+	public static final ConfiguredFeature<?, ?> CRYSTAL_ORE = register("crystal_ore", Feature.ORE.configure(new OreFeatureConfig(OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, ModBlocks.CRYSTAL_ORE.getDefaultState(), 8)).decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(0, 0, 50)))).spreadHorizontally().repeat(12);
 	public static final RegistryKey<ConfiguredFeature<?, ?>> CRYSTAL_ORE_KEY = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN, id("crystal_ore"));
 
 	private static ConfiguredFeature<?, ?> register(String name, ConfiguredFeature<?, ?> feature) {
