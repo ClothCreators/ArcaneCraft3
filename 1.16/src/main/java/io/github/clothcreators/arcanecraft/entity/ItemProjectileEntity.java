@@ -9,6 +9,9 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.projectile.PersistentProjectileEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.particle.ParticleEffect;
+import net.minecraft.particle.ParticleType;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.world.World;
 
 import net.fabricmc.api.EnvType;
@@ -23,6 +26,7 @@ import net.fabricmc.api.EnvironmentInterfaces;
 public class ItemProjectileEntity extends PersistentProjectileEntity implements FlyingItemEntity, NetworkSynced {
 	private ItemStack stack;
 	private Consumer<LivingEntity> hitConsumer = entity -> {};
+	private ParticleEffect particleEffect;
 
 	protected ItemProjectileEntity(EntityType<? extends PersistentProjectileEntity> entityType, World world) {
 		super(entityType, world);
@@ -49,6 +53,10 @@ public class ItemProjectileEntity extends PersistentProjectileEntity implements 
 		return this.stack;
 	}
 
+	public void setParticleEffect(ParticleEffect particleEffect) {
+		this.particleEffect = particleEffect;
+	}
+
 	@Override
 	public void apply(CompoundTag syncedTag) {
 		this.stack = ItemStack.fromTag(syncedTag.getCompound("stack"));
@@ -58,6 +66,13 @@ public class ItemProjectileEntity extends PersistentProjectileEntity implements 
 	protected void onHit(LivingEntity target) {
 		super.onHit(target);
 		this.hitConsumer.accept(target);
+	}
+
+	@Override
+	public void tick() {
+		if (this.particleEffect != null && !this.world.isClient()) {
+			this.world.addParticle(this.particleEffect, this.getY(), this.getZ(), 1, 1, 1, 1);
+		}
 	}
 
 	@Override
