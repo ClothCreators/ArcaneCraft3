@@ -4,11 +4,9 @@ import io.github.clothcreators.arcanecraft.ArcaneCraft3;
 
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectType;
-import net.minecraft.text.Text;
-import net.minecraft.text.TranslatableText;
 
 public class SoulTrapperEffect extends StatusEffect {
-	protected SoulTrapperEffect(StatusEffectType type, int color) {
+	public SoulTrapperEffect(StatusEffectType type, int color) {
 		super(type, color);
 	}
 
