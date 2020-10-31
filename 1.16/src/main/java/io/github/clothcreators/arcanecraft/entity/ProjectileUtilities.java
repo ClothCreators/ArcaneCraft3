@@ -1,6 +1,7 @@
 package io.github.clothcreators.arcanecraft.entity;
 
 import java.util.Random;
+import java.util.function.Consumer;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
@@ -13,8 +14,9 @@ public class ProjectileUtilities {
 	private ProjectileUtilities() {
 	}
 
-	public static ItemProjectileEntity shoot(ItemStack stack, World world, LivingEntity entity, Random random, float power, double damage, int knockback) {
+	public static ItemProjectileEntity shoot(ItemStack stack, World world, LivingEntity entity, Random random, float power, double damage, int knockback, Consumer<LivingEntity> hitConsumer) {
 		ItemProjectileEntity arrow = new ItemProjectileEntity(ModEntityTypes.ITEM_PROJECTILE, entity, world, stack);
+		arrow.setHitConsumer(hitConsumer);
 		arrow.setVelocity(entity.getRotationVector().x, entity.getRotationVector().y, entity.getRotationVector().z, power * 2, 0);
 		arrow.setSilent(true);
 		arrow.setCritical(false);
@@ -25,8 +27,9 @@ public class ProjectileUtilities {
 		return arrow;
 	}
 
-	public static ItemProjectileEntity shoot(ItemStack stack, LivingEntity entity, LivingEntity target) {
+	public static ItemProjectileEntity shoot(ItemStack stack, LivingEntity entity, LivingEntity target, Consumer<LivingEntity> hitConsumer) {
 		ItemProjectileEntity arrow = new ItemProjectileEntity(ModEntityTypes.ITEM_PROJECTILE, entity, entity.world, stack);
+		arrow.setHitConsumer(hitConsumer);
 		double x = target.getX() - entity.getX();
 		double y = target.getY() + (double) target.getEyeHeight(target.getPose()) - 1.1;
 		double z = target.getZ() - entity.getZ();
