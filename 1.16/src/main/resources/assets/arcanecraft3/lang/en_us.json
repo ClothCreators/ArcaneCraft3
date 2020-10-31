@@ -9,7 +9,7 @@
   "entity.arcanecraft3.fire_splash": "Fire Splash",
   "advancements.arcane_craft_advancement.descr": "You just mined a Crystal and Your magic adventure begins!",
   "advancements.magical_stick.title": "Magical Stick",
-  "effect.soul_trapper": "Soul Trapper",
+  "arcanecraft3.statuseffect.soul_trapper": "Soul Trapper",
   "item.minecraft.lingering_potion.effect.soul_trapper": "Lingering Soul Trapper",
   "block.arcanecraft3.wand_workbench_full": "Wand Workbench",
   "item.arcanecraft3.arcane_scroll_ice": "Arcane Scroll",
