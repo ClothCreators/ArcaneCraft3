@@ -23,7 +23,7 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "io.github.clothcreators.ArcaneCraft3"
+      "io.github.clothcreators.arcanecraft.ArcaneCraft3"
     ]
   },
   "mixins": [

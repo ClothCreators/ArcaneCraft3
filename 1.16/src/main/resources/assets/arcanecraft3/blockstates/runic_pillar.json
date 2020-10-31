@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "active=false": {
+      "model": "arcanecraft:block/runic_pillar"
+    },
+    "active=true" :{
+      "model": "arcanecraft:block/runic_pillar_active"
+    }
+  }
+}
