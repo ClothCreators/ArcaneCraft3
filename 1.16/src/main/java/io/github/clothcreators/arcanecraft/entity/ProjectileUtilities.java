@@ -6,6 +6,7 @@ import java.util.function.Consumer;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
@@ -14,7 +15,7 @@ public class ProjectileUtilities {
 	private ProjectileUtilities() {
 	}
 
-	public static ItemProjectileEntity shoot(ItemStack stack, World world, LivingEntity entity, Random random, float power, double damage, int knockback, Consumer<LivingEntity> hitConsumer) {
+	public static ItemProjectileEntity shoot(ItemStack stack, World world, LivingEntity entity, Random random, float power, double damage, int knockback, Consumer<LivingEntity> hitConsumer, SoundEvent sound) {
 		ItemProjectileEntity arrow = new ItemProjectileEntity(ModEntityTypes.ITEM_PROJECTILE, entity, world, stack);
 		arrow.setHitConsumer(hitConsumer);
 		arrow.setVelocity(entity.getRotationVector().x, entity.getRotationVector().y, entity.getRotationVector().z, power * 2, 0);
@@ -23,11 +24,11 @@ public class ProjectileUtilities {
 		arrow.setDamage(damage);
 		arrow.setPunch(knockback);
 		world.spawnEntity(arrow);
-		world.playSound(null, entity.getX(), entity.getY(), entity.getZ(), SoundEvents.ENTITY_EVOKER_CAST_SPELL, SoundCategory.PLAYERS, 1, 1f / (random.nextFloat() * 0.5f + 1) + (power / 2));
+		world.playSound(null, entity.getX(), entity.getY(), entity.getZ(), sound, SoundCategory.PLAYERS, 1, 1f / (random.nextFloat() * 0.5f + 1) + (power / 2));
 		return arrow;
 	}
 
-	public static ItemProjectileEntity shoot(ItemStack stack, LivingEntity entity, LivingEntity target, Consumer<LivingEntity> hitConsumer) {
+	public static ItemProjectileEntity shoot(ItemStack stack, LivingEntity entity, LivingEntity target, Consumer<LivingEntity> hitConsumer, SoundEvent sound) {
 		ItemProjectileEntity arrow = new ItemProjectileEntity(ModEntityTypes.ITEM_PROJECTILE, entity, entity.world, stack);
 		arrow.setHitConsumer(hitConsumer);
 		double x = target.getX() - entity.getX();
@@ -37,7 +38,7 @@ public class ProjectileUtilities {
 		arrow.setSilent(true);
 		arrow.setCritical(false);
 		entity.world.spawnEntity(arrow);
-		entity.world.playSound(null, entity.getX(), entity.getY(), entity.getZ(), SoundEvents.ENTITY_EVOKER_CAST_SPELL, SoundCategory.PLAYERS, 1, 1f / (new Random().nextFloat() * 0.5f + 1));
+		entity.world.playSound(null, entity.getX(), entity.getY(), entity.getZ(), sound, SoundCategory.PLAYERS, 1, 1f / (new Random().nextFloat() * 0.5f + 1));
 		return arrow;
 	}
 }

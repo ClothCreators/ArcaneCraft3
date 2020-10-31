@@ -26,6 +26,6 @@ public abstract class AbstractWandItem extends Item {
 	@Override
 	public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
 		user.setCurrentHand(hand);
-		return TypedActionResult.consume(user.getStackInHand(hand));
+		return TypedActionResult.success(user.getStackInHand(hand));
 	}
 }
