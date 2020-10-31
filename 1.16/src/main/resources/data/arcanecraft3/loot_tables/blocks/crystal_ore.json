@@ -24,7 +24,7 @@
                   }
                 }
               ],
-              "name": "arcanecraft:crystal_ore"
+              "name": "arcanecraft3:crystal_ore"
             },
             {
               "type": "minecraft:item",
@@ -49,7 +49,7 @@
                   "function": "minecraft:explosion_decay"
                 }
               ],
-              "name": "minecraft:arcanecraft:crystal_ore"
+              "name": "arcanecraft3:crystal"
             }
           ]
         }

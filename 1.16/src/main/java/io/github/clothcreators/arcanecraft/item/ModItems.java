@@ -3,6 +3,8 @@ package io.github.clothcreators.arcanecraft.item;
 import static io.github.clothcreators.arcanecraft.ArcaneCraft3.id;
 
 import io.github.clothcreators.arcanecraft.block.ModBlocks;
+import io.github.clothcreators.arcanecraft.item.wand.IceWandItem;
+import io.github.clothcreators.arcanecraft.item.wand.NoSpellWandItem;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
@@ -30,6 +32,8 @@ public class ModItems {
 	public static final Item RUNIC_STONE_STAIRS = register("runic_stone_stairs", ModBlocks.RUNIC_STONE_STAIRS, new FabricItemSettings().group(ITEM_GROUP));
 	public static final Item RUNIC_STONE_WALL = register("runic_stone_wall", ModBlocks.RUNIC_STONE_WALL, new FabricItemSettings().group(ITEM_GROUP));
 	public static final Item SOUL_ITEM = register("soul", new SoulItem(new FabricItemSettings().group(ITEM_GROUP)));
+	public static final Item WAND = register("wand", new NoSpellWandItem(new FabricItemSettings().group(ITEM_GROUP).maxCount(1)));
+	public static final Item ICE_WAND = register("wand_ice", new IceWandItem(new FabricItemSettings().group(ITEM_GROUP).maxDamage(421)));
 
 	private static Item register(String name, Block block, Item.Settings settings) {
 		return Registry.register(Registry.ITEM, id(name), new BlockItem(block, settings));

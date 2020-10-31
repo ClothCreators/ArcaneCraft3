@@ -5,6 +5,7 @@ import io.github.clothcreators.arcanecraft.item.ModItems;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.Slice;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
@@ -38,5 +39,10 @@ public abstract class LivingEntityMixin extends Entity {
 			entityToSpawn.setPickupDelay(10);
 			this.world.spawnEntity(entityToSpawn);
 		}
+	}
+
+	@Inject(at = @At(value = "INVOKE", ordinal = 0, target = "Lnet/minecraft/item/ItemStack;usageTick(Lnet/minecraft/world/World;Lnet/minecraft/entity/LivingEntity;I)V"), method = "tickActiveItemStack")
+	public void interceptTickActiveItemStack(CallbackInfo ci) {
+		System.out.println("TEST");
 	}
 }
