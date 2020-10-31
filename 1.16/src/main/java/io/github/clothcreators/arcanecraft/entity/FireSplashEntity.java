@@ -2,7 +2,6 @@ package io.github.clothcreators.arcanecraft.entity;
 
 import java.util.Random;
 
-import io.github.clothcreators.arcanecraft.networking.EntityPacketUtils;
 import org.jetbrains.annotations.Nullable;
 
 import net.minecraft.entity.EntityGroup;
@@ -14,7 +13,6 @@ import net.minecraft.entity.mob.PathAwareEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.ArrowEntity;
 import net.minecraft.entity.projectile.thrown.PotionEntity;
-import net.minecraft.network.Packet;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.world.World;
@@ -85,12 +83,7 @@ public class FireSplashEntity extends PathAwareEntity {
 	@Override
 	public void baseTick() {
 		super.baseTick();
-		// TODO: implement baseTick procedure
-	}
-
-	@Override
-	public Packet<?> createSpawnPacket() {
-		return EntityPacketUtils.createPacket(this);
+		this.remove();
 	}
 
 	@Override

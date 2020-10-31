@@ -1,6 +1,7 @@
 package io.github.clothcreators.arcanecraft.entity;
 
 import java.util.Random;
+import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
 import net.minecraft.entity.LivingEntity;
@@ -8,7 +9,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.particle.ParticleEffect;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvent;
-import net.minecraft.sound.SoundEvents;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 
@@ -16,10 +17,10 @@ public class ProjectileUtilities {
 	private ProjectileUtilities() {
 	}
 
-	public static ItemProjectileEntity shoot(ItemStack stack, World world, LivingEntity entity, Random random, float power, double damage, int knockback, Consumer<LivingEntity> hitConsumer, SoundEvent sound, ParticleEffect effect) {
+	public static ItemProjectileEntity shoot(ItemStack stack, World world, LivingEntity entity, Random random, float power, double damage, int knockback, Consumer<LivingEntity> hitConsumer, SoundEvent sound, Consumer<ItemProjectileEntity> tickConsumer, BiConsumer<BlockPos, World> blockConsumer) {
 		ItemProjectileEntity arrow = new ItemProjectileEntity(ModEntityTypes.ITEM_PROJECTILE, entity, world, stack);
 		arrow.setHitConsumer(hitConsumer);
-		arrow.setParticleEffect(effect);
+		arrow.setBlockConsumer(blockConsumer);
 		arrow.setVelocity(entity.getRotationVector().x, entity.getRotationVector().y, entity.getRotationVector().z, power * 2, 0);
 		arrow.setSilent(true);
 		arrow.setCritical(false);
@@ -30,10 +31,10 @@ public class ProjectileUtilities {
 		return arrow;
 	}
 
-	public static ItemProjectileEntity shoot(ItemStack stack, LivingEntity entity, LivingEntity target, Consumer<LivingEntity> hitConsumer, SoundEvent sound, ParticleEffect effect) {
+	public static ItemProjectileEntity shoot(ItemStack stack, LivingEntity entity, LivingEntity target, Consumer<LivingEntity> hitConsumer, SoundEvent sound, Consumer<ItemProjectileEntity> tickConsumer, BiConsumer<BlockPos, World> blockConsumer) {
 		ItemProjectileEntity arrow = new ItemProjectileEntity(ModEntityTypes.ITEM_PROJECTILE, entity, entity.world, stack);
 		arrow.setHitConsumer(hitConsumer);
-		arrow.setParticleEffect(effect);
+		arrow.setBlockConsumer(blockConsumer);
 		double x = target.getX() - entity.getX();
 		double y = target.getY() + (double) target.getEyeHeight(target.getPose()) - 1.1;
 		double z = target.getZ() - entity.getZ();

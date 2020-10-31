@@ -1,5 +1,6 @@
 package io.github.clothcreators.arcanecraft.entity;
 
+import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
 import net.minecraft.block.Blocks;
@@ -10,8 +11,7 @@ import net.minecraft.entity.projectile.PersistentProjectileEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.particle.ParticleEffect;
-import net.minecraft.particle.ParticleType;
-import net.minecraft.server.world.ServerWorld;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 import net.fabricmc.api.EnvType;
@@ -26,7 +26,8 @@ import net.fabricmc.api.EnvironmentInterfaces;
 public class ItemProjectileEntity extends PersistentProjectileEntity implements FlyingItemEntity, NetworkSynced {
 	private ItemStack stack;
 	private Consumer<LivingEntity> hitConsumer = entity -> {};
-	private ParticleEffect particleEffect;
+	private Consumer<ItemProjectileEntity>  tickConsumer = entity -> {};
+	private BiConsumer<BlockPos, World> blockConsumer;
 
 	protected ItemProjectileEntity(EntityType<? extends PersistentProjectileEntity> entityType, World world) {
 		super(entityType, world);
@@ -53,8 +54,12 @@ public class ItemProjectileEntity extends PersistentProjectileEntity implements 
 		return this.stack;
 	}
 
-	public void setParticleEffect(ParticleEffect particleEffect) {
-		this.particleEffect = particleEffect;
+	public void setTickConsumer(Consumer<ItemProjectileEntity> tickConsumer) {
+		this.tickConsumer = tickConsumer;
+	}
+
+	public void setBlockConsumer(BiConsumer<BlockPos, World> blockConsumer) {
+		this.blockConsumer = blockConsumer;
 	}
 
 	@Override
@@ -66,13 +71,15 @@ public class ItemProjectileEntity extends PersistentProjectileEntity implements 
 	protected void onHit(LivingEntity target) {
 		super.onHit(target);
 		this.hitConsumer.accept(target);
+		if (this.blockConsumer != null && this.inGround) {
+			this.blockConsumer.accept(new BlockPos(this.getX(), this.getY(), this.getZ()), this.world);
+			this.remove();
+		}
 	}
 
 	@Override
 	public void tick() {
-		if (this.particleEffect != null && !this.world.isClient()) {
-			this.world.addParticle(this.particleEffect, this.getY(), this.getZ(), 1, 1, 1, 1);
-		}
+		this.tickConsumer.accept(this);
 	}
 
 	@Override
