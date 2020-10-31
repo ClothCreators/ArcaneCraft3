@@ -5,6 +5,7 @@ import static io.github.clothcreators.arcanecraft.ArcaneCraft3.id;
 import io.github.clothcreators.arcanecraft.block.ModBlocks;
 import io.github.clothcreators.arcanecraft.entity.ItemProjectileEntity;
 import io.github.clothcreators.arcanecraft.entity.ModEntityTypes;
+import io.github.clothcreators.arcanecraft.networking.EntityPacketUtils;
 
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.entity.FlyingItemEntityRenderer;
@@ -14,6 +15,7 @@ import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendereregistry.v1.EntityRendererRegistry;
 import net.fabricmc.fabric.api.event.client.ClientSpriteRegistryCallback;
+import net.fabricmc.fabric.api.network.ClientSidePacketRegistry;
 
 public class ArcaneCraft3Client implements ClientModInitializer {
 	@Override
@@ -27,5 +29,6 @@ public class ArcaneCraft3Client implements ClientModInitializer {
 		});
 		EntityRendererRegistry.INSTANCE.register(ModEntityTypes.FIRE_SPLASH, FireSplashEntityRenderer::new);
 		EntityRendererRegistry.INSTANCE.register(ModEntityTypes.ITEM_PROJECTILE, (dispatcher, ctx) -> new FlyingItemEntityRenderer<ItemProjectileEntity>(dispatcher, ctx.getItemRenderer()));
+		ClientSidePacketRegistry.INSTANCE.register(EntityPacketUtils.ID, EntityPacketUtils::onPacket);
 	}
 }

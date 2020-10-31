@@ -27,6 +27,8 @@ public class FireSplashEntity extends PathAwareEntity {
 		builder.add(EntityAttributes.GENERIC_MAX_HEALTH, 1);
 		builder.add(EntityAttributes.GENERIC_ARMOR, 0);
 		builder.add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 3);
+		builder.add(EntityAttributes.GENERIC_FOLLOW_RANGE, 16.0D);
+		builder.add(EntityAttributes.GENERIC_ATTACK_KNOCKBACK, 0.5D);
 		return builder;
 	}
 

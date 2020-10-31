@@ -1,5 +1,7 @@
 package io.github.clothcreators.arcanecraft.entity;
 
+import java.util.function.Consumer;
+
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.FlyingItemEntity;
@@ -20,6 +22,7 @@ import net.fabricmc.api.EnvironmentInterfaces;
 @SuppressWarnings("EntityConstructor")
 public class ItemProjectileEntity extends PersistentProjectileEntity implements FlyingItemEntity, NetworkSynced {
 	private ItemStack stack;
+	private Consumer<LivingEntity> hitConsumer = entity -> {};
 
 	protected ItemProjectileEntity(EntityType<? extends PersistentProjectileEntity> entityType, World world) {
 		super(entityType, world);
@@ -51,10 +54,10 @@ public class ItemProjectileEntity extends PersistentProjectileEntity implements 
 		this.stack = ItemStack.fromTag(syncedTag.getCompound("stack"));
 	}
 
-	// TODO: arrowHit procedure
 	@Override
 	protected void onHit(LivingEntity target) {
 		super.onHit(target);
+		this.hitConsumer.accept(target);
 	}
 
 	@Override
@@ -62,5 +65,9 @@ public class ItemProjectileEntity extends PersistentProjectileEntity implements 
 		CompoundTag tag = new CompoundTag();
 		tag.put("stack", this.stack.toTag(new CompoundTag()));
 		return tag;
+	}
+
+	public void setHitConsumer(Consumer<LivingEntity> hitConsumer) {
+		this.hitConsumer = hitConsumer;
 	}
 }
