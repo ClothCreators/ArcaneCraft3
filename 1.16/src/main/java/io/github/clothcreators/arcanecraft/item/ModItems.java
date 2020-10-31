@@ -3,7 +3,9 @@ package io.github.clothcreators.arcanecraft.item;
 import static io.github.clothcreators.arcanecraft.ArcaneCraft3.id;
 
 import io.github.clothcreators.arcanecraft.block.ModBlocks;
+import io.github.clothcreators.arcanecraft.item.wand.FireWandItem;
 import io.github.clothcreators.arcanecraft.item.wand.IceWandItem;
+import io.github.clothcreators.arcanecraft.item.wand.LightningWandItem;
 import io.github.clothcreators.arcanecraft.item.wand.NoSpellWandItem;
 
 import net.minecraft.block.Block;
@@ -34,6 +36,8 @@ public class ModItems {
 	public static final Item SOUL_ITEM = register("soul", new SoulItem(new FabricItemSettings().group(ITEM_GROUP)));
 	public static final Item WAND = register("wand", new NoSpellWandItem(new FabricItemSettings().group(ITEM_GROUP).maxCount(1)));
 	public static final Item ICE_WAND = register("wand_ice", new IceWandItem(new FabricItemSettings().group(ITEM_GROUP).maxDamage(421)));
+	public static final Item FIRE_WAND = register("wand_fire", new FireWandItem(new FabricItemSettings().group(ITEM_GROUP).maxDamage(421)));
+	public static final Item LIGHTNING_WAND = register("wand_lightning", new LightningWandItem(new FabricItemSettings().group(ITEM_GROUP).maxDamage(421)));
 
 	private static Item register(String name, Block block, Item.Settings settings) {
 		return Registry.register(Registry.ITEM, id(name), new BlockItem(block, settings));
