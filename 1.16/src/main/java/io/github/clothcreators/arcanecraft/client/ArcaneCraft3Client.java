@@ -3,12 +3,14 @@ package io.github.clothcreators.arcanecraft.client;
 import static io.github.clothcreators.arcanecraft.ArcaneCraft3.id;
 
 import io.github.clothcreators.arcanecraft.block.ModBlocks;
+import io.github.clothcreators.arcanecraft.entity.ModEntityTypes;
 
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.util.Identifier;
 
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
+import net.fabricmc.fabric.api.client.rendereregistry.v1.EntityRendererRegistry;
 import net.fabricmc.fabric.api.event.client.ClientSpriteRegistryCallback;
 
 public class ArcaneCraft3Client implements ClientModInitializer {
@@ -21,5 +23,6 @@ public class ArcaneCraft3Client implements ClientModInitializer {
 			registry.register(id("textures/mob_effect/charred_strike.png"));
 			registry.register(id("textures/mob_effect/soul_trapper.png"));
 		});
+		EntityRendererRegistry.INSTANCE.register(ModEntityTypes.FIRE_SPLASH, FireSplashEntityRenderer::new);
 	}
 }
