@@ -19,6 +19,7 @@ public class ModItems {
 
 	private static final ItemGroup ITEM_GROUP = FabricItemGroupBuilder.create(id("item_group")).icon(() -> null).build();
 	public static final Item RUNIC_STONE = register("runic_stone", ModBlocks.RUNIC_STONE, new FabricItemSettings().group(ITEM_GROUP));
+	public static final Item CRYSTAL_DUST = register("crystal_dust", new Item(new FabricItemSettings().group(ITEM_GROUP)));
 
 	private static Item register(String name, Block block, Item.Settings settings) {
 		return Registry.register(Registry.ITEM, id(name), new BlockItem(block, settings));

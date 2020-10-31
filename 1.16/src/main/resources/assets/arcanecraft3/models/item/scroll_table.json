@@ -1,5 +1,5 @@
 {
-  "parent": "arcanecraft:block/scroll_table",
+  "parent": "arcanecraft3:block/scroll_table",
   "display": {
     "thirdperson": {
       "rotation": [

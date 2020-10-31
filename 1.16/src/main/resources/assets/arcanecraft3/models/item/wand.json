@@ -1,7 +1,7 @@
 {
-  "parent": "arcanecraft:custom/wand",
+  "parent": "arcanecraft3:other/wand",
   "textures": {
-    "0": "arcanecraft:blocks/wand",
-    "1": "arcanecraft:blocks/wand2"
+    "0": "arcanecraft3:blocks/wand",
+    "1": "arcanecraft3:blocks/wand2"
   }
 }

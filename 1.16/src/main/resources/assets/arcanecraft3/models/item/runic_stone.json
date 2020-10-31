@@ -1,5 +1,5 @@
 {
-  "parent": "arcanecraft:block/runic_stone",
+  "parent": "arcanecraft3:block/runic_stone",
   "display": {
     "thirdperson": {
       "rotation": [

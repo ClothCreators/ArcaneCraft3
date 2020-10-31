@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "arcanecraft:block/scroll_table_tile"
+      "model": "arcanecraft3:block/scroll_table_tile"
     }
   }
 }

@@ -1,5 +1,5 @@
 {
-  "parent": "arcanecraft:block/wand_workbench_full",
+  "parent": "arcanecraft3:block/wand_workbench_full",
   "display": {
     "thirdperson": {
       "rotation": [

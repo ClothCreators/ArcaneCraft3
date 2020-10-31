@@ -1,13 +1,13 @@
 {
   "variants": {
     "type=bottom": {
-      "model": "arcanecraft:block/runic_stone_slab"
+      "model": "arcanecraft3:block/runic_stone_slab"
     },
     "type=top": {
-      "model": "arcanecraft:block/runic_stone_slab_top"
+      "model": "arcanecraft3:block/runic_stone_slab_top"
     },
     "type=double": {
-      "model": "arcanecraft:block/runic_stone_slab_full"
+      "model": "arcanecraft3:block/runic_stone_slab_full"
     }
   }
 }

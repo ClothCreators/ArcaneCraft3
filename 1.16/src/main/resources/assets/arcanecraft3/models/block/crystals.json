@@ -1,8 +1,8 @@
 {
-  "parent": "arcanecraft:custom/crystals",
+  "parent": "arcanecraft3:other/crystals",
   "textures": {
-    "all": "arcanecraft:blocks/crystal",
-    "particle": "arcanecraft:blocks/crystal",
-    "0": "arcanecraft:blocks/crystal"
+    "all": "arcanecraft3:blocks/crystal",
+    "particle": "arcanecraft3:blocks/crystal",
+    "0": "arcanecraft3:blocks/crystal"
   }
 }

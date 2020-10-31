@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "arcanecraft:block/wand_workbench_full"
+      "model": "arcanecraft3:block/wand_workbench_full"
     }
   }
 }

@@ -1,5 +1,5 @@
 {
-  "parent": "arcanecraft:block/crystal_ore",
+  "parent": "arcanecraft3:block/crystal_ore",
   "display": {
     "thirdperson": {
       "rotation": [

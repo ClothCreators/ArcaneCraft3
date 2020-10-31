@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "arcanecraft:items/ink_vial"
+    "layer0": "arcanecraft3:items/ink_vial"
   }
 }

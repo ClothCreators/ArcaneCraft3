@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "arcanecraft:block/crystals"
+      "model": "arcanecraft3:block/crystals"
     }
   }
 }

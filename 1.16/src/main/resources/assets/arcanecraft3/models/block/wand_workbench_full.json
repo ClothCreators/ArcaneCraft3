@@ -1,8 +1,8 @@
 {
-  "parent": "arcanecraft:custom/wand_workbench",
+  "parent": "arcanecraft3:other/wand_workbench",
   "textures": {
-    "all": "arcanecraft:blocks/wand_workbench_empty",
-    "particle": "arcanecraft:blocks/wand_workbench_empty",
-    "main": "arcanecraft:blocks/wand_workbench"
+    "all": "arcanecraft3:blocks/wand_workbench_empty",
+    "particle": "arcanecraft3:blocks/wand_workbench_empty",
+    "main": "arcanecraft3:blocks/wand_workbench"
   }
 }

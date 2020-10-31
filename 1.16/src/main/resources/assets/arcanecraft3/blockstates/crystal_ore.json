@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "arcanecraft:block/crystal_ore"
+      "model": "arcanecraft3:block/crystal_ore"
     }
   }
 }

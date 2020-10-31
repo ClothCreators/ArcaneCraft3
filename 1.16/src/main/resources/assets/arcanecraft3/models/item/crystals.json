@@ -1,5 +1,5 @@
 {
-  "parent": "arcanecraft:block/crystals",
+  "parent": "arcanecraft3:block/crystals",
   "display": {
     "thirdperson": {
       "rotation": [

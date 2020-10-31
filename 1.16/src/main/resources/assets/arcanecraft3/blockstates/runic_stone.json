@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "arcanecraft:block/runic_stone"
+      "model": "arcanecraft3:block/runic_stone"
     }
   }
 }
