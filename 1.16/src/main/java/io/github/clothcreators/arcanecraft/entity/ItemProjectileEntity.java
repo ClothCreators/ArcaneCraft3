@@ -3,6 +3,8 @@ package io.github.clothcreators.arcanecraft.entity;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
+import io.github.clothcreators.arcanecraft.networking.EntityPacketUtils;
+
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.FlyingItemEntity;
@@ -10,11 +12,12 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.projectile.PersistentProjectileEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.particle.ParticleEffect;
+import net.minecraft.network.Packet;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.fabricmc.api.EnvironmentInterface;
 import net.fabricmc.api.EnvironmentInterfaces;
 
@@ -44,6 +47,7 @@ public class ItemProjectileEntity extends PersistentProjectileEntity implements 
 		this.stack = stack;
 	}
 
+	@Environment(EnvType.CLIENT)
 	@Override
 	public ItemStack getStack() {
 		return this.stack;
@@ -51,7 +55,7 @@ public class ItemProjectileEntity extends PersistentProjectileEntity implements 
 
 	@Override
 	protected ItemStack asItemStack() {
-		return this.stack;
+		return null;
 	}
 
 	public void setTickConsumer(Consumer<ItemProjectileEntity> tickConsumer) {
@@ -71,8 +75,10 @@ public class ItemProjectileEntity extends PersistentProjectileEntity implements 
 	protected void onHit(LivingEntity target) {
 		super.onHit(target);
 		this.hitConsumer.accept(target);
-		if (this.blockConsumer != null && this.inGround) {
-			this.blockConsumer.accept(new BlockPos(this.getX(), this.getY(), this.getZ()), this.world);
+		if (this.inGround) {
+			if (this.blockConsumer != null) {
+				this.blockConsumer.accept(new BlockPos(this.getX(), this.getY(), this.getZ()), this.world);
+			}
 			this.remove();
 		}
 	}
@@ -87,6 +93,11 @@ public class ItemProjectileEntity extends PersistentProjectileEntity implements 
 		CompoundTag tag = new CompoundTag();
 		tag.put("stack", this.stack.toTag(new CompoundTag()));
 		return tag;
+	}
+
+	@Override
+	public Packet<?> createSpawnPacket() {
+		return EntityPacketUtils.createPacket(this);
 	}
 
 	public void setHitConsumer(Consumer<LivingEntity> hitConsumer) {

@@ -39,9 +39,4 @@ public abstract class LivingEntityMixin extends Entity {
 			this.world.spawnEntity(entityToSpawn);
 		}
 	}
-
-	@Inject(at = @At(value = "INVOKE", ordinal = 0, target = "Lnet/minecraft/item/ItemStack;usageTick(Lnet/minecraft/world/World;Lnet/minecraft/entity/LivingEntity;I)V"), method = "tickActiveItemStack")
-	public void interceptTickActiveItemStack(CallbackInfo ci) {
-		System.out.println("TEST");
-	}
 }

@@ -41,6 +41,9 @@ public class EntityPacketUtils {
 		buf.writeByte(MathHelper.floor(entity.yaw * 256.0F / 360.0F));
 		buf.writeFloat(entity.pitch);
 		buf.writeFloat(entity.yaw);
+		buf.writeDouble(entity.getVelocity().x);
+		buf.writeDouble(entity.getVelocity().y);
+		buf.writeDouble(entity.getVelocity().z);
 		buf.writeCompoundTag(entity instanceof NetworkSynced ? ((NetworkSynced) entity).getSyncedTag() : new CompoundTag());
 		return ServerSidePacketRegistry.INSTANCE.toPacket(ID, buf);
 	}
@@ -55,6 +58,9 @@ public class EntityPacketUtils {
 		double z = byteBuf.readDouble();
 		float pitch = (float)(byteBuf.readByte() * 360) / 256.0F;
 		float yaw = (float)(byteBuf.readByte() * 360) / 256.0F;
+		double vX = byteBuf.readDouble();
+		double vY = byteBuf.readDouble();
+		double vZ = byteBuf.readDouble();
 		CompoundTag syncedTag = byteBuf.readCompoundTag();
 		ctx.getTaskQueue().execute(() -> {
 			ClientWorld world = MinecraftClient.getInstance().world;
@@ -64,6 +70,7 @@ public class EntityPacketUtils {
 				entity.updateTrackedPosition(x, y, z);
 				entity.pitch = pitch;
 				entity.yaw = yaw;
+				entity.setVelocity(vX, vY, vZ);
 				entity.setEntityId(entityID);
 				entity.setUuid(entityUUID);
 				if (entity instanceof NetworkSynced) {

@@ -18,11 +18,11 @@ public abstract class AbstractWandItem extends Item {
 	}
 
 	protected static void grantAdvancement(ServerPlayerEntity entity) {
-		Advancement advancement = entity.server.getAdvancementLoader().get(new Identifier("arcanecraft3:woo_magic"));
-		AdvancementProgress progress = entity.getAdvancementTracker().getProgress(advancement);
-		if (!progress.isDone()) {
-			entity.getAdvancementTracker().grantCriterion(advancement, "impossible");
-		}
+//		Advancement advancement = entity.server.getAdvancementLoader().get(new Identifier("arcanecraft3:woo_magic"));
+//		AdvancementProgress progress = entity.getAdvancementTracker().getProgress(advancement);
+//		if (!progress.isDone()) {
+//			entity.getAdvancementTracker().grantCriterion(advancement, "impossible");
+//		}
 	}
 
 	@Override
