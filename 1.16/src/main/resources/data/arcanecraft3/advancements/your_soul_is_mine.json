@@ -1,7 +1,7 @@
 {
   "display": {
     "icon": {
-      "item": "arcanecraft:soul"
+      "item": "arcanecraft3:soul"
     },
     "title": {
       "translate": "advancements.arcanecraft3.your_soul_is_mine.title"

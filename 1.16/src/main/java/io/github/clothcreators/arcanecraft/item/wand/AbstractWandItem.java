@@ -20,18 +20,18 @@ public abstract class AbstractWandItem extends Item {
 	}
 
 	protected static void grantAdvancement(ServerPlayerEntity entity) {
-		Advancement advancement = entity.server.getAdvancementLoader().get(new Identifier("arcanecraft:woo_magic"));
+		/*Advancement advancement = entity.server.getAdvancementLoader().get(new Identifier("arcanecraft:woo_magic"));
 		AdvancementProgress progress = entity.getAdvancementTracker().getProgress(advancement);
 		if (!progress.isDone()) {
 			for (String criterion : progress.getUnobtainedCriteria()) {
 				entity.getAdvancementTracker().grantCriterion(advancement, criterion);
 			}
-		}
+		}*/
 	}
 
 	@Override
 	public int getMaxUseTime(ItemStack stack) {
-		return 72000;
+		return 20000;
 	}
 
 	@Override

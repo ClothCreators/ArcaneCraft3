@@ -1,7 +1,7 @@
 {
   "display": {
     "icon": {
-      "item": "arcanecraft:wand"
+      "item": "arcanecraft3:wand"
     },
     "title": {
       "translate": "advancements.arcanecraft3.magical_stick.title"
@@ -20,7 +20,7 @@
       "conditions": {
         "items": [
           {
-            "item": "arcanecraft:wand",
+            "item": "arcanecraf3t:wand",
             "count": {
               "min": 1,
               "max": 1
@@ -33,5 +33,5 @@
   "rewards": {
     "experience": 2
   },
-  "parent": "arcanecraft:arcane_craft_advancement"
+  "parent": "arcanecraft3:arcane_craft_advancement"
 }

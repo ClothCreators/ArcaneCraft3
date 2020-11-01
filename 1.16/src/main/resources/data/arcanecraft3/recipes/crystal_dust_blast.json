@@ -6,7 +6,5 @@
   "ingredient": {
     "item": "arcanecraft3:crystal"
   },
-  "result": {
-    "item": "arcanecraft3:crystal_dust"
-  }
+  "result": "arcanecraft3:crystal_dust"
 }

@@ -3,7 +3,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "arcanecraft:crystals"
+      "item": "arcanecraft3:crystals"
     }
   ],
   "result": {
