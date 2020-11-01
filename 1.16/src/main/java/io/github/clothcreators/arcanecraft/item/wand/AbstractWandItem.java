@@ -1,7 +1,5 @@
 package io.github.clothcreators.arcanecraft.item.wand;
 
-import io.github.clothcreators.arcanecraft.entity.ItemProjectileEntity;
-
 import net.minecraft.advancement.Advancement;
 import net.minecraft.advancement.AdvancementProgress;
 import net.minecraft.entity.player.PlayerEntity;
@@ -20,13 +18,11 @@ public abstract class AbstractWandItem extends Item {
 	}
 
 	protected static void grantAdvancement(ServerPlayerEntity entity) {
-		/*Advancement advancement = entity.server.getAdvancementLoader().get(new Identifier("arcanecraft:woo_magic"));
+		Advancement advancement = entity.server.getAdvancementLoader().get(new Identifier("arcanecraft3:woo_magic"));
 		AdvancementProgress progress = entity.getAdvancementTracker().getProgress(advancement);
 		if (!progress.isDone()) {
-			for (String criterion : progress.getUnobtainedCriteria()) {
-				entity.getAdvancementTracker().grantCriterion(advancement, criterion);
-			}
-		}*/
+			entity.getAdvancementTracker().grantCriterion(advancement, "impossible");
+		}
 	}
 
 	@Override
