@@ -31,7 +31,7 @@ public abstract class AbstractWandItem extends Item {
 
 	@Override
 	public int getMaxUseTime(ItemStack stack) {
-		return 20000;
+		return 72000;
 	}
 
 	@Override
